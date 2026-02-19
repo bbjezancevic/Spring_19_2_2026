@@ -1,6 +1,7 @@
 package hr.java.spring.boot.Example.controller;
 
 import hr.java.spring.boot.Example.domain.Hardware;
+import hr.java.spring.boot.Example.dto.HardwareDTO;
 import hr.java.spring.boot.Example.service.HardwareService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,12 +18,12 @@ public class HardwareController {
     private HardwareService hardwareService;
 
     @GetMapping
-    public List<Hardware> getAllHardware(){
+    public List<HardwareDTO> getAllHardware(){
         return hardwareService.getAllHardware().stream().toList();
     }
 
     @GetMapping("/{hardwareCode}")
-    public List<Hardware> getHardwareByCode(@PathVariable String hardwareCode) {
+    public List<HardwareDTO> getHardwareByCode(@PathVariable String hardwareCode) {
         return hardwareService.getHardwareByCode(hardwareCode).stream().toList();
     }
 }

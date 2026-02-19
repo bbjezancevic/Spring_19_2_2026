@@ -6,10 +6,13 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum Type {
-    CPU,
-    GPU,
-    MBO,
-    RAM,
-    STORAGE,
-    OTHER;
+    CPU(1, "CPU"),
+    GPU(2, "GPU"),
+    MBO(3, "MBO"),
+    RAM(4, "RAM"),
+    STORAGE(5, "STORAGE"),
+    OTHER(6, "OTHER");
+
+    private final Integer id;
+    private final String name;
 }

@@ -1,10 +1,11 @@
 package hr.java.spring.boot.Example.service;
 
 import hr.java.spring.boot.Example.domain.Hardware;
+import hr.java.spring.boot.Example.dto.HardwareDTO;
 
 import java.util.List;
 
 public interface HardwareService {
-    List<Hardware> getAllHardware();
-    List<Hardware> getHardwareByCode(String hardwareCode);
+    List<HardwareDTO> getAllHardware();
+    List<HardwareDTO> getHardwareByCode(String hardwareCode);
 }
