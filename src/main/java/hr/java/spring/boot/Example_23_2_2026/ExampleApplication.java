@@ -1,4 +1,4 @@
-package hr.java.spring.boot.Example;
+package hr.java.spring.boot.Example_23_2_2026;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package hr.java.spring.boot.Example.domain;
+package hr.java.spring.boot.Example_23_2_2026.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
