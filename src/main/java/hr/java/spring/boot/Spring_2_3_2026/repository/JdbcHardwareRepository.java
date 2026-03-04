@@ -20,6 +20,7 @@ import java.util.Optional;
 public class JdbcHardwareRepository implements HardwareRepository{
 
     private JdbcTemplate jdbcTemplate;
+    private Integer generatedId;
 
     @Override
     public List<Hardware> getAllHardware() {
@@ -35,8 +36,7 @@ public class JdbcHardwareRepository implements HardwareRepository{
     public Integer saveNewHardware(Hardware hardware) {
 //        final String SQL = "SELECT ID FROM FINAL TABLE (INSERT INTO HARDWARE (name, code, price, typeId, stock) VALUES (?, ?, ?, ?, ?)) HARDWARE";
         final String SQL = "INSERT INTO HARDWARE (name, code, price, typeId, stock) OUTPUT INSERTED.ID VALUES (?, ?, ?, ?, ?)";
-        Integer generatedId = jdbcTemplate.queryForObject(SQL, Integer.class, hardware.getName(), hardware.getCode(),
-                hardware.getPrice(), hardware.getType().getId(), hardware.getStock());
+        Integer generatedId = generatedId;
         hardware.setId(generatedId);
         return generatedId;
     }
